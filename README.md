@@ -3,7 +3,7 @@
 <div align="center">
 <span>Website</span>
 </div>
-<h3 align="center">Um Servidor com temas focados em tecnología e programação. Brasil e Portugal</h3>
+<h3 align="center">Um servidor no Discord com temas focados em tecnologia e programação.
 <h3 align="left">Contate com a gente!</h3>
 <p align="left">
 <a href="https://discord.gg/xRTy8kAjFw" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="xRTy8kAjFw" height="30" width="40" /></a>
