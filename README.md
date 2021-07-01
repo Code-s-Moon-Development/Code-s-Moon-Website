@@ -1,7 +1,7 @@
 
 <h1 align="center">Code's Moon Technologies</h1>
 <div align="center">
-<span>Website</span>
+<span>[![Discord](https://discordapp.com/api/guilds/689492899389505650/widget.png)](https://discord.gg/XpTWUy72Cq)</span>
 </div>
 <h3 align="center">Um servidor no Discord com temas focados em tecnologia e programação.
 <h3 align="left">Contate com a gente!</h3>
