@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/rortan134/Code-s-Moon-Website.git",
   "author": "Code's Moon Technologies",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "git-commit-msg-linter": "3.2.6"
+  }
 }
