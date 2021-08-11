@@ -6,6 +6,7 @@
   "author": "Code's Moon Technologies",
   "license": "MIT",
   "dependencies": {
-    "git-commit-msg-linter": "3.2.6"
+    "git-commit-msg-linter": "3.2.6",
+    "modern-normalize": "^1.1.0"
   }
 }

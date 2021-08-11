@@ -1,0 +1,31 @@
+/* CSS Normalizer. "npm install" pra instalar as depêndencias */
+@import '../../node_modules/modern-normalize/modern-normalize.css';
+
+/* Paleta de cores
+================================
+#FFCF00
+rgba(255,255,255,.4)
+#262626
+#FFFFFF
+================================
+
+Heading Sizes - mobile
+  $h00-size-mobile: 40px;
+  $h0-size-mobile: 32px;
+  $h1-size-mobile: 26px;
+  $h2-size-mobile: 22px;
+  $h3-size-mobile: 18px;
+
+Heading sizes - desktop
+  $h00-size: 48px;
+  $h0-size: 40px;
+  $h1-size: 32px;
+  $h2-size: 24px;
+  $h3-size: 20px;
+  $h4-size: 16px;
+================================
+*/
+
+body {
+    background-color: black;
+}
