@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-br">
   <head>
     <!--- Basic page needs
     ================================================== -->
@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>Code's Moon Technology</title>
+    <title>Code's Moon Technologies</title>
     <meta name="description" content="Code's Moon Website" />
     <meta
       name="keywords"
@@ -28,27 +28,73 @@
 
     <!--- Fontawesome & Others 
     ================================================== -->
-    <script
-      src="https://kit.fontawesome.com/864a5235fe.js"
-      crossorigin="anonymous"
-    ></script>
+      <!-- <script
+        src="https://kit.fontawesome.com/864a5235fe.js"
+        crossorigin="anonymous"
+      ></script> -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
 
     <!-- CSS
    ================================================== -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.css" />
 
     <!-- Script
    ================================================== -->
-    <script defer src="./js/functions.js"></script>
+    <script defer src="./js/main.js"></script>
   </head>
 
   <body>
-    <noscript><p>Your Browser does not support JavaScript.</p></noscript>
+    <noscript><p>O seu navegador não suporta JavaScript.</p></noscript>
+
+    <header class="page-main-header">
+      <img src="favicon.png" alt="Code's Moon logo">
+      
+      <ul>
+        <li><a href="#">Início</a></li><!--   These comments will remove undesired white spaces created by the browser
+        --><li><a href="#">Comunidade</a></li><!--
+        --><li><a href="#">Conhecimento</a></li><!--
+        --><li><a href="#">Sobre</a></li><!--
+        --><li><a href="#">Blogs</a></li>
+      </ul>
+    </header>
+
     <main>
-        <h1>Hello World...</h1>
+      <div class="description-container">
+        <p>Um servidor agradável para fazer amigos!</p>
+        <h1>Comunidade de Programação</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Porro, illum quaerat consectetur vero dolorem
+          minus placeat ut illo nihil, tenetur esse hic nemo
+          tempora, dolor voluptatum facere voluptatibus natus! Quae.
+        </p>
+
+        <div class="actions-anchors-container">
+          <a href="#"><p>saiba mais</p></a>
+          <a href="#"><p>entrar no server</p></a>
+        </div>
+      </div>
+
+      <div class="images-container">
+        <img class="filled-vector" src="./media/Vector.png" alt="vetor com conteúdo preenchido">
+        <img class="outlined-vector" src="./media/Vector-1.png" alt="vetor contornado">
+        <img class="big-codes-moon-logo" src="./media/Logo_CodesMoon.png" alt="Code's Moon logo grande">
+
+        <div class="technologies-wrapper">
+          <img src="./media/Group 2.png" alt="Tecnologias que suportamos">
+          <p>Consiga ajuda</p>
+        </div>
+        <div class="make-friends-wrapper">
+          <img src="./media/Group 1.png" alt="Imangem de duas pessoas próximas">
+          <p>Faça amigos</p>
+        </div>
+        <div class="members-wrapper">
+          <img src="./media/Group 3.png" alt="Imagem dos usuários do Code's Moon">
+          <p><span>250+</span> membros</p>
+        </div>
+      </div>
     </main>
   </body>
 </html>
