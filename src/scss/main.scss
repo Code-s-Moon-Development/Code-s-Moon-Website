@@ -182,7 +182,7 @@ main {
   justify-content: space-between;
   gap: 12%;
 
-  margin-top: 28px;
+  margin-top: 40px;
 
   a {
     display: flex;
@@ -215,6 +215,10 @@ main {
     -moz-transition: transform 100ms linear;
     -o-transition: transform 100ms linear;
     transition: transform 100ms linear;
+    &:hover {
+        transform: translateY(-4px);
+        transition: all .4s;
+    }
   }
 
   a:first-child {
@@ -225,14 +229,15 @@ main {
 
   a:last-child {
     border: 2px solid var(--yellow-color);
+    overflow: hidden;
 
     p {color: var(--page-content-color)}
+    &:hover {
+        background-color: var(--yellow-color);
+        box-shadow: 0px 0px 20px 5px rgba(255, 207, 0, 0.40);
+        p {color: var(--page-contrastive-content-color)}
+    }
   }
-
-  a:hover {
-    transform: translateY(-4px);
-  }
-
   a:active {
     transform: scale(0.95);
   }
