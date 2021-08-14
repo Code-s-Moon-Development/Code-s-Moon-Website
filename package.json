@@ -1,11 +1,20 @@
 {
   "name": "code-s-moon-website",
   "version": "1.0.0",
-  "repository": "https://github.com/rortan134/Code-s-Moon-Website.git",
+  "repository": "https://github.com/Code-s-Moon-Development/Code-s-Moon-Website.git",
   "author": "Code's Moon Technologies",
   "license": "MIT",
+  "scripts": {
+    "start": "parcel serve ./static/index.html",
+    "build": "parcel build ./static/index.html"
+  },
   "dependencies": {
     "git-commit-msg-linter": "3.2.6",
     "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0"
   }
 }
