@@ -3,5 +3,9 @@ dist
 packages
 .webpack
 out
+<<<<<<< HEAD
 yarn.lock
+=======
+package-lock.json
+>>>>>>> 17ab9ec166ebf448771c2febca33e5a6c64e1969
 .parcel-cache
