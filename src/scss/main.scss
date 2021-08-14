@@ -51,11 +51,11 @@ Heading sizes - desktop
   background-clip: padding-box;
 
   &:hover {
-      background-color: rgb(139, 139, 139);
+    background-color: rgb(139, 139, 139);
   }
 
   &:active {
-      background-color: rgb(97, 97, 97);
+    background-color: rgb(97, 97, 97);
   }
 }
 
@@ -91,7 +91,7 @@ body {
 
   a::after {
     content: '';
-    
+
     display: block;
     width: 0%;
     height: 3px;
@@ -114,7 +114,8 @@ body {
     transition: width 150ms ease;
   }
 
-  a:hover::after, a:focus::after {
+  a:hover::after,
+  a:focus::after {
     width: 100%;
   }
 
@@ -158,7 +159,7 @@ main {
 
     &::before {
       content: '';
-      
+
       display: block;
       height: 100%;
       width: 2px;
@@ -207,7 +208,7 @@ main {
     -moz-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    
+
     -webkit-transition: transform 100ms linear;
     -moz-transition: transform 100ms linear;
     -o-transition: transform 100ms linear;
@@ -217,13 +218,17 @@ main {
   a:first-child {
     background-color: var(--yellow-color);
 
-    p {color: var(--page-contrastive-content-color)}
+    p {
+      color: var(--page-contrastive-content-color);
+    }
   }
 
   a:last-child {
     border: 2px solid var(--yellow-color);
 
-    p {color: var(--page-content-color)}
+    p {
+      color: var(--page-content-color);
+    }
   }
 
   a:hover {
@@ -251,12 +256,13 @@ main {
   -moz-user-select: none;
   user-select: none;
 
-  & > img, div {
+  & > img,
+  div {
     position: absolute;
   }
 
   .content-wrapper {
-    position: relative
+    position: relative;
   }
 
   .filled-vector {
@@ -272,11 +278,11 @@ main {
   .outlined-vector {
     transform: translate(-47%, -52%);
   }
-  
+
   .big-codes-moon-logo {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
   }
 
   div {
@@ -293,7 +299,8 @@ main {
     }
   }
 
-  .technologies-wrapper, .make-friends-wrapper {
+  .technologies-wrapper,
+  .make-friends-wrapper {
     max-width: 200px;
     width: 30%;
     z-index: 1;
@@ -343,7 +350,7 @@ main {
 }
 
 .triangle-wrapper {
-  position: relative
+  position: relative;
 }
 
 .yellowed-triangle {
@@ -356,7 +363,6 @@ main {
   right: 0px;
 }
 
-
 /* JavaScript classes */
 
 .define-image-dimensions-based-on-width {
@@ -364,7 +370,8 @@ main {
     width: 100%;
   }
 
-  .filled-vector, .outlined-vector {
+  .filled-vector,
+  .outlined-vector {
     width: 100%;
     height: auto;
   }
@@ -380,7 +387,8 @@ main {
     height: 100%;
   }
 
-  .filled-vector, .outlined-vector {
+  .filled-vector,
+  .outlined-vector {
     height: 100%;
     width: auto;
   }
@@ -391,10 +399,10 @@ main {
   }
 }
 
-
 @media screen and (max-width: 1100px) {
   .images-container {
-    .technologies-wrapper, .make-friends-wrapper {
+    .technologies-wrapper,
+    .make-friends-wrapper {
       width: 150px;
     }
   }
@@ -414,7 +422,8 @@ main {
 }
 
 @media screen and (max-width: 846px) {
-  .page-main-header, main {
+  .page-main-header,
+  main {
     padding-left: 3.2vw;
     padding-right: 3.2vw;
   }
@@ -444,12 +453,13 @@ main {
 
 @media screen and (max-width: 830px) {
   .images-container {
-    .technologies-wrapper, .make-friends-wrapper {
+    .technologies-wrapper,
+    .make-friends-wrapper {
       width: 120px;
 
       p {
         font-size: 11px;
-        line-height: 11px
+        line-height: 11px;
       }
     }
   }

@@ -3,4 +3,5 @@ dist
 packages
 .webpack
 out
-yarn.lock
+package-lock.json
+.parcel-cache
