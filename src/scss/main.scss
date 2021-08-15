@@ -60,7 +60,7 @@ Heading sizes - desktop
 }
 
 body {
-    overflow: hidden;
+  overflow-x: hidden;
   background-color: var(--page-background-color);
 }
 
@@ -84,10 +84,17 @@ body {
 
   a {
     padding: 4px 2px 6px;
+
     position: relative;
+    
     text-decoration: none;
-    outline: none;
     letter-spacing: .5px;
+    outline: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
   }
 
   a::after {
@@ -95,7 +102,7 @@ body {
     
     display: block;
     width: 0%;
-    height: 5px;
+    height: 4px;
 
     position: absolute;
     bottom: 2px;
@@ -103,11 +110,6 @@ body {
     transform: translate(-50%, 50%);
 
     background-color: var(--yellow-color);
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
 
     -webkit-transition: width 150ms ease;
     -moz-transition: width 150ms ease;
@@ -131,27 +133,31 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 40% 1fr;
   gap: 3.5%;
   align-items: center;
+
+  min-height: calc(100vh - 116px);
+  padding: 0px 4.5vw 16px 4.5vw;
   
   position: relative;
   z-index: 2;
 
-  min-height: calc(100vh - 107px);
-  padding: 0px 4.5vw 16px 4.5vw;
-
+  overflow: hidden;
 }
 
 .description-container {
+  -webkit-animation: appear-to-right 900ms ease forwards;
+  -moz-animation: appear-to-right 900ms ease forwards;
+  -o-animation: appear-to-right 900ms ease forwards;
+  animation: appear-to-right 900ms ease forwards;
+
   h1 {
     margin: 20px 0px;
     padding: 4px 0;
     text-shadow: 0px 0px 10px rgba(255, 208, 0, 0.4);
 
     position: relative;
-
-    // background-color: rgba(20, 19, 19, 0.8);
 
     font-size: 48px;
     font-weight: 800;
@@ -168,12 +174,25 @@ main {
       position: absolute;
       top: 0px;
       left: 0px;
-      transform: translateX(-20px);
+      transform: translateX(-18px);
       background-color: var(--yellow-color);
     }
   }
+  
   p {
     line-height: 22px;
+  }
+}
+
+@keyframes appear-to-right {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
   }
 }
 
@@ -197,11 +216,10 @@ main {
     max-width: 210px;
 
     border-radius: 8px;
-    box-shadow: 0px 0px 15px 5px rgba(255, 207, 0, 0.25);
 
     text-align: center;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.5px;
     font-variant: small-caps;
@@ -210,50 +228,64 @@ main {
     -moz-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    
-    -webkit-transition: transform 100ms linear;
-    -moz-transition: transform 100ms linear;
-    -o-transition: transform 100ms linear;
-    transition: transform 100ms linear;
+
     &:hover {
-        transform: translateY(-4px);
-        transition: all .4s;
+      transform: translateY(-4px);
     }
   }
 
   a:first-child {
     background-color: var(--yellow-color);
+    box-shadow: 0px 0px 15px 5px rgba(255, 207, 0, 0.25);
 
-    p {color: var(--page-contrastive-content-color)}
+    -webkit-transition: transform 120ms linear;
+    -moz-transition: transform 120ms linear;
+    -o-transition: transform 120ms linear;
+    transition: transform 120ms linear;
+
+    p {color: var(--page-contrastive-content-color)};
   }
 
   a:last-child {
     border: 2px solid var(--yellow-color);
     overflow: hidden;
 
+    -webkit-transition: transform 120ms linear, background-color 120ms linear, box-shadow 120ms linear;
+    -moz-transition: transform 120ms linear, background-color 120ms linear, box-shadow 120ms linear;
+    -o-transition: transform 120ms linear, background-color 120ms linear, box-shadow 120ms linear;
+    transition: transform 120ms linear, background-color 120ms linear, box-shadow 120ms linear;
+
     p {color: var(--page-content-color)}
+
     &:hover {
         background-color: var(--yellow-color);
         box-shadow: 0px 0px 20px 5px rgba(255, 207, 0, 0.40);
+
         p {color: var(--page-contrastive-content-color)}
     }
   }
+
   a:active {
     transform: scale(0.95);
   }
 }
 
 .images-container {
+  -webkit-animation: appear-to-top 1100ms ease forwards;
+  -moz-animation: appear-to-top 1100ms ease forwards;
+  -o-animation: appear-to-top 1100ms ease forwards;
+  animation: appear-to-top 1100ms ease forwards;
+
   display: flex;
   align-items: center;
   justify-content: center;
   justify-self: center;
 
   width: 100%;
+  max-width: 550px;
   height: 100%;
+
   position: relative;
-  max-width: 565px;
-  min-width: 540px;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -298,7 +330,7 @@ main {
       position: absolute;
       color: var(--page-contrastive-content-color);
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 600;
     }
   }
 
@@ -307,6 +339,7 @@ main {
     width: 45%;
     height: auto;
     z-index: 1;
+
     p {
       max-width: 67%;
       overflow-wrap: break-word;
@@ -322,7 +355,7 @@ main {
 
   .make-friends-wrapper {
     bottom: 0%;
-    left: -5%;
+    left: -2%;
     z-index: 1;
   }
 
@@ -331,10 +364,9 @@ main {
     width: 60%;
     height: auto;
     z-index: 2;
-    bottom: -7%;
+    bottom: 0%;   // This value won't cause y overflow
     right: -5%;
 
-    
     p {
       left: 52%;
       top: 17%;
@@ -347,8 +379,20 @@ main {
   }
 }
 
+@keyframes appear-to-top {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 .triangle-wrapper {
-  position: relative
+  position: relative;
 }
 
 .yellowed-triangle {
@@ -359,6 +403,25 @@ main {
   position: absolute;
   bottom: 0px;
   right: 0px;
+
+  transform-origin: bottom right;
+
+  -webkit-animation: appear-growing 1500ms ease forwards;
+  -moz-animation: appear-growing 1500ms ease forwards;
+  -o-animation: appear-growing 1500ms ease forwards;
+  animation: appear-growing 1100ms ease forwards; 
+}
+
+@keyframes appear-growing {
+  from {
+    transform: scale(0.30);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 
@@ -398,11 +461,15 @@ main {
 
 
 @media screen and (max-width: 1100px) {
-//   .images-container {
-//     .technologies-wrapper, .make-friends-wrapper {
-//       width: 150px;
-//     }
-//   }
+  .images-container {
+    .technologies-wrapper, .make-friends-wrapper {
+      width: 180px;
+    }
+
+    .technologies-wrapper {
+      right: -7%;
+    }
+  }
 }
 
 @media screen and (max-width: 1008px) {
@@ -430,12 +497,7 @@ main {
   }
 
   main {
-    min-height: calc(100vh - 87px);
-  }
-
-  .description-container h1 {
-    margin: 12px 0px;
-    font-size: 36px;
+    min-height: calc(100vh - 96px);
   }
 
   .actions-anchors-container {
@@ -450,42 +512,73 @@ main {
 @media screen and (max-width: 830px) {
   .images-container {
     .technologies-wrapper, .make-friends-wrapper {
-    //   width: 120px;
+      width: 160px;
+
       p {
-        font-size: 11px;
-        line-height: 11px
+        font-size: 13px;
+        line-height: 12px;
       }
     }
   }
 
   .images-container .technologies-wrapper {
-    top: 18%;
-  }
-
-  .images-container .make-friends-wrapper {
-    left: 10%;
+    top: 12%;
   }
 }
 
 @media screen and (max-width: 766px) {
   main {
-    grid-template-columns: 48% 52%;
+    grid-template-columns: 48% 1fr;
   }
 
   .actions-anchors-container {
     gap: 7%;
   }
+
+  .images-container {
+    .technologies-wrapper, .make-friends-wrapper {
+      width: 140px;
+
+      p {
+        font-size: 12px;
+        line-height: 12px;
+      }
+    }
+
+    .members-wrapper {
+      width: 220px;
+
+      p {
+        font-size: 13px
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 696px) {
-  .images-container .members-wrapper {
-    width: 180px;
+  .images-container {
+    .technologies-wrapper, .make-friends-wrapper {
+      width: 120px;
+
+      p {
+        font-size: 11px;
+        line-height: 12px;
+      }
+    }
+
+    .members-wrapper {
+      width: 200px;
+
+      p {
+        font-size: 12px
+      }
+    }
   }
 }
 
 @media screen and (max-width: 626px) {
   .description-container h1 {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 
