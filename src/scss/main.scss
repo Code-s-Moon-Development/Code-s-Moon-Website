@@ -118,7 +118,7 @@ body {
   }
 
   a:hover::after, a:focus::after {
-    width: 100%;
+    width: 80%;
   }
 
   li:first-child a {
@@ -151,6 +151,10 @@ main {
   -moz-animation: appear-to-right 900ms ease forwards;
   -o-animation: appear-to-right 900ms ease forwards;
   animation: appear-to-right 900ms ease forwards;
+
+  img {
+    display: none;
+  }
 
   h1 {
     margin: 20px 0px;
@@ -204,18 +208,13 @@ main {
   margin-top: 40px;
 
   a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    white-space: nowrap;
+    border: 2px solid var(--yellow-color);
     padding: 15px 18px;
     width: 100%;
-    height: fit-content;
-    height: -moz-fit-content;
     max-width: 210px;
 
     border-radius: 8px;
+    box-shadow: 0px 0px 15px 5px rgba(255, 207, 0, 0.25);
 
     text-align: center;
     text-decoration: none;
@@ -223,6 +222,7 @@ main {
     font-weight: 600;
     letter-spacing: 0.5px;
     font-variant: small-caps;
+    white-space: nowrap;
 
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -234,34 +234,31 @@ main {
     }
   }
 
-  a:first-child {
+  a:first-child :not(.alternative-join-button) {
     background-color: var(--yellow-color);
-    box-shadow: 0px 0px 15px 5px rgba(255, 207, 0, 0.25);
+
+    color: var(--page-contrastive-content-color);
 
     -webkit-transition: transform 120ms linear;
     -moz-transition: transform 120ms linear;
     -o-transition: transform 120ms linear;
     transition: transform 120ms linear;
-
-    p {color: var(--page-contrastive-content-color)};
   }
 
-  a:last-child {
-    border: 2px solid var(--yellow-color);
+  a:last-child, .alternative-join-button {
     overflow: hidden;
+
+    color: var(--page-content-color);
 
     -webkit-transition: transform 120ms linear, background-color 120ms linear, box-shadow 120ms linear;
     -moz-transition: transform 120ms linear, background-color 120ms linear, box-shadow 120ms linear;
     -o-transition: transform 120ms linear, background-color 120ms linear, box-shadow 120ms linear;
     transition: transform 120ms linear, background-color 120ms linear, box-shadow 120ms linear;
 
-    p {color: var(--page-content-color)}
-
     &:hover {
         background-color: var(--yellow-color);
         box-shadow: 0px 0px 20px 5px rgba(255, 207, 0, 0.40);
-
-        p {color: var(--page-contrastive-content-color)}
+        color: var(--page-contrastive-content-color);
     }
   }
 
@@ -379,6 +376,10 @@ main {
   }
 }
 
+.compacted-images-container {
+  display: none;
+}
+
 @keyframes appear-to-top {
   from {
     transform: translateY(30%);
@@ -459,6 +460,12 @@ main {
   }
 }
 
+@media screen and (max-width: 1180px) {
+  .actions-anchors-container a {
+    font-size: 17px;
+  }
+}
+
 
 @media screen and (max-width: 1100px) {
   .images-container {
@@ -500,8 +507,16 @@ main {
     min-height: calc(100vh - 96px);
   }
 
+  .description-container h1::before {
+    transform: translateX(-12px);
+  }
+
   .actions-anchors-container {
     margin-top: 22px;
+
+    a {
+      padding: 10px 12px;
+    }
   }
 
   .images-container .outlined-vector {
@@ -526,7 +541,7 @@ main {
   }
 }
 
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 774px) {
   main {
     grid-template-columns: 48% 1fr;
   }
@@ -580,10 +595,179 @@ main {
   .description-container h1 {
     font-size: 36px;
   }
+
+  .actions-anchors-container a {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 612px) {    // Breakpoint for smaller screens
+  .page-main-header {
+    display: block;
+
+    img {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+
+      li {
+        margin: 0px;
+      }
+    }
+  }
+
+  main {
+    display: block;
+    padding: 0px;
+    min-height: auto;
+  }
+
+  .description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 0px 3.2vw 16px 3.2vw;
+    min-height: calc(100vh - 52.25px);
+
+    background-image: url('../assets/Vector.png');
+    background-position: 60% 0%;
+    background-size: auto 90%;
+    background-attachment: fixed;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+
+    h1 {
+      text-shadow: 0px 0px 25px rgba(255, 207, 0, 0.4);
+    }
+  }
+
+  .description-container p, .description-container h1 {
+    text-align: center;
+  }
+
+  .description-container h1::before {
+    height: 1px;
+    width: 40%;
+
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .description-container img {
+    display: block;
+    margin: 14px auto;
+    width: 64px;
+    height: 51px;
+  }
+
+  .actions-anchors-container a {
+    box-shadow: 0px 0px 10px 3px rgba(255, 207, 0, 0.25);
+  }
+
+  .actions-anchors-container a:last-child:hover,
+  .actions-anchors-container .alternative-join-button:hover {
+    box-shadow: 0px 0px 17px 4px rgba(255, 207, 0, 0.25);
+  }
+
+  .images-container {
+    display: none;
+  }
+
+  .compacted-images-container {
+    display: block;
+    margin-top: 14px;
+    padding: 0px 3.2vw;
+
+    .card {
+      display: grid;
+
+      margin-bottom: 10px;
+
+      position: static;
+
+      border-radius: 4px;
+    }
+
+    .card:first-child {
+      grid-template-columns: 40% 1fr;
+    }
+
+    .card:nth-child(2) {
+      grid-template-columns: 1fr 40%;
+    }
+
+    div[class*="wrapper"] {
+      width: 100%;
+
+      position: relative;
+      right: 0px;
+      left: 0px;
+      bottom: 0px;
+      top: 0px;
+      z-index: 0;
+    }
+
+    & > div:not([class*="wrapper"]) > p, & > p {
+      position: static;
+
+      color: var(--page-content-color);
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+    }
+
+    & > div:not([class*="wrapper"]) > p {
+      align-self: center;
+    }
+
+    & > p {
+      text-align: center;
+      line-height: 24px;
+      font-weight: 600;
+      font-size: 17px;
+      
+      span {
+        display: block;
+      }
+    }
+
+    .actions-anchors-container {
+      display: block;
+      position: static;
+
+      a {
+        display: block;
+        margin: 0px auto 16px auto;
+        width: 152px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .page-main-header a {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .page-main-header a {
+    font-size: 13px;
+  }
+
+  .actions-anchors-container a {
+    padding: 6px 10px
+  }
 }
 
 @media (pointer: coarse) {
-  * {
+  a, button {
     cursor: default;
   }
 }
