@@ -49,18 +49,33 @@
 
   <body>
     <noscript><p>O seu navegador não suporta JavaScript.</p></noscript>
-
+    
+    <div class="hamburguer-menu-closer-shortcut"></div>
+    
     <header class="page-main-header">
       <img src="../assets/favicon.png" alt="Code's Moon logo" />
 
-      <ul>
+      <ul class="hamburguer-menu">
         <li><a href="#">Início</a></li><!--  These comments will remove undesired white spaces created by the browser. Leave it on this order
         --><li><a href="#">Comunidade</a></li><!--
         --><li><a href="#">Conhecimento</a></li><!--
         --><li><a href="#">Sobre</a></li><!--
         --><li><a href="#">Blogs</a></li>
+
+        <button class="hamburguer-menu-closer">
+          <span></span>
+          <span></span>
+        </button>
       </ul>
+
+      <button class="hamburguer-menu-opener">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
+
+    
 
     <main>
       <article class="description-container">
@@ -153,7 +168,7 @@
           <span>Interessado?</span> Seja um de nós!
         </p>
 
-        <div class="actions-anchors-container">   <!-- It will get the styles of the button -->
+        <div class="actions-anchors-container">   <!-- It will get the styles of the join button -->
           <a class="alternative-join-button" href="#">
             entrar
           </a>
