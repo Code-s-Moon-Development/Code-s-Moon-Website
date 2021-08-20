@@ -12,7 +12,3 @@ export default function defineImagesSizes() {
     imagesWrapperEL.classList.add('define-image-dimensions-based-on-width');
   }
 }
-
-window.addEventListener('load', defineImagesSizes);
-
-window.addEventListener('resize', defineImagesSizes);
