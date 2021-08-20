@@ -72,6 +72,7 @@ body {
 
   padding: 15px 4.5vw 0px 4.5vw;
   margin-bottom: 20px;
+  min-height: 96px;
 
   li {
     display: inline-block;
@@ -156,11 +157,6 @@ main {
 }
 
 .description-container {
-  -webkit-animation: appear-to-right 900ms ease forwards;
-  -moz-animation: appear-to-right 900ms ease forwards;
-  -o-animation: appear-to-right 900ms ease forwards;
-  animation: appear-to-right 900ms ease forwards;
-
   img {
     display: none;
   }
@@ -194,18 +190,6 @@ main {
   
   p {
     line-height: 22px;
-  }
-}
-
-@keyframes appear-to-right {
-  from {
-    transform: translateX(-30%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0px);
-    opacity: 1;
   }
 }
 
@@ -269,6 +253,13 @@ main {
         box-shadow: 0px 0px 20px 5px rgba(255, 207, 0, 0.40);
         color: var(--page-contrastive-content-color);
     }
+
+    &:active {
+      background-color: var(--yellow-color);
+      box-shadow: 0px 0px 20px 5px rgba(255, 207, 0, 0.40);
+      color: var(--page-contrastive-content-color);
+      transform: scale(0.95);
+    }
   }
 
   a:active {
@@ -277,11 +268,6 @@ main {
 }
 
 .images-container {
-  -webkit-animation: appear-to-top 1100ms ease forwards;
-  -moz-animation: appear-to-top 1100ms ease forwards;
-  -o-animation: appear-to-top 1100ms ease forwards;
-  animation: appear-to-top 1100ms ease forwards;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -396,18 +382,6 @@ main {
   display: none;
 }
 
-@keyframes appear-to-top {
-  from {
-    transform: translateY(30%);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
 .triangle-wrapper {
   position: relative;
 }
@@ -422,23 +396,6 @@ main {
   right: 0px;
 
   transform-origin: bottom right;
-
-  -webkit-animation: appear-growing 1500ms ease forwards;
-  -moz-animation: appear-growing 1500ms ease forwards;
-  -o-animation: appear-growing 1500ms ease forwards;
-  animation: appear-growing 1100ms ease forwards; 
-}
-
-@keyframes appear-growing {
-  from {
-    transform: scale(0.30);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 
@@ -451,6 +408,52 @@ main {
 div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcut {
   pointer-events: auto;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.appear-to-right {
+  -webkit-animation: appear-to-right 900ms ease forwards;
+  -moz-animation: appear-to-right 900ms ease forwards;
+  -o-animation: appear-to-right 900ms ease forwards;
+  animation: appear-to-right 900ms ease forwards;
+}
+
+.appear-to-left {
+  -webkit-animation: appear-to-left 900ms ease forwards;
+  -moz-animation: appear-to-left 900ms ease forwards;
+  -o-animation: appear-to-left 900ms ease forwards;
+  animation: appear-to-left 900ms ease forwards;
+}
+
+.appear-growing-with-delay {
+  -webkit-animation: appear-growing-with-delay 1200ms linear;
+  -moz-animation: appear-growing-with-delay 1200ms linear;
+  -o-animation: appear-growing-with-delay 1200ms linear;
+  animation: appear-growing-with-delay 1200ms linear;
+}
+
+.appear-to-top {
+  -webkit-animation: appear-to-top 1100ms ease forwards;
+  -moz-animation: appear-to-top 1100ms ease forwards;
+  -o-animation: appear-to-top 1100ms ease forwards;
+  animation: appear-to-top 1100ms ease forwards;
+}
+
+.appear-growing-without-delay {
+  -webkit-animation: appear-growing-without-delay 300ms linear;
+  -moz-animation: appear-growing-without-delay 300ms linear;
+  -o-animation: appear-growing-without-delay 300ms linear;
+  animation: appear-growing-without-delay 300ms linear;
+}
+
+.appear-growing {
+  -webkit-animation: appear-growing 1500ms ease forwards;
+  -moz-animation: appear-growing 1500ms ease forwards;
+  -o-animation: appear-growing 1500ms ease forwards;
+  animation: appear-growing 1100ms ease forwards; 
+}
+
+.fade-element {
+  opacity: 0;
 }
 
 .define-image-dimensions-based-on-width {
@@ -485,12 +488,89 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
   }
 }
 
+
+@keyframes appear-to-right {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes appear-to-left {
+  from {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes appear-growing-without-delay {
+  from {
+    opacity: 0;
+    transform: scale(0.80);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes appear-growing-with-delay {
+  from {
+    opacity: 0
+  }
+
+  73% {
+    opacity: 0;
+    transform: scale(0.80);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes appear-to-top {
+  from {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes appear-growing {
+  from {
+    transform: scale(0.40);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
 @media screen and (max-width: 1180px) {
   .actions-anchors-container a {
     font-size: 17px;
   }
 }
-
 
 @media screen and (max-width: 1100px) {
   .images-container {
@@ -536,6 +616,10 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
   .page-main-header, main {
     padding-left: 3.2vw;
     padding-right: 3.2vw;
+  }
+
+  .page-main-header {
+    min-height: 76px;
   }
 
   .page-main-header img {
@@ -649,6 +733,7 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
     padding-top: 8px;
     padding-bottom: 10px;
     width: 100%;
+    min-height: auto;
     
     position: fixed;
     top: 0px;
@@ -775,7 +860,9 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
       -moz-user-select: none;
       -moz-user-select: none;
       user-select: none;
+    }
 
+    .technologies-wrapper, .make-friends-wrapper {
       p {
         top: 5%;
         font-size: 15px;
@@ -786,9 +873,11 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
       margin: 0px auto 20px auto;
       width: 75%;
       max-width: 280px;
+
+      p {font-size: 15px}
     }
 
-    & > div:not([class*="wrapper"]) > p, & > p {
+    & > figure > figcaption p {
       position: static;
 
       color: var(--page-content-color);
@@ -797,11 +886,15 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
       text-align: center;
     }
 
-    & > div:not([class*="wrapper"]) > p {
+    & > figure > figcaption {
       align-self: center;
     }
 
-    & > p {
+    & > .animation-wrapper > p {
+      position: static;
+
+      color: var(--page-content-color);
+
       text-align: center;
       line-height: 24px;
       font-weight: 600;
@@ -850,7 +943,7 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
   }
 }
 
-@media screen and (max-height: 470px) {
+@media screen and (max-height: 470px) and (max-width: 618px) {
   .description-container {
     img {
       margin: 6px auto;
@@ -865,7 +958,7 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
 
 @media screen and (max-width: 380px) {
   .page-main-header a {
-    font-size: 13px;
+    font-size: 13.4px;
   }
 
   .actions-anchors-container a {
@@ -892,14 +985,14 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
   }
 }
 
-@media screen and (max-width: 350px) {    // .hamburguer menu breakpoint
+@media screen and (max-width: 350px) {    // Hamburguer menu breakpoint
   .page-main-header {
     display: flex;
     justify-content: flex-end;
 
     margin-bottom: 0px;
     padding: 11px 16px;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
 
     ul {
       flex-direction: column;
@@ -918,7 +1011,6 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
       
       transform: translateX(calc(100% + 4px));
       
-
       overflow-y: scroll;
 
       background-color: var(--page-background-color);
@@ -1013,6 +1105,11 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
     
     .card:nth-child(2) {
       grid-template-columns: 1fr 40%;
+    }
+
+    & > figure > figcaption p {
+      line-height: 24px;
+      font-size: 15px;
     }
   }
 }
