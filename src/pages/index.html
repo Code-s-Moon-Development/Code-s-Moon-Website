@@ -75,9 +75,7 @@
       </button>
     </header>
 
-    
-
-    <main>
+    <main class="fade-element">
       <article class="description-container">
         <div>                           <!-- Flex wrapper-->
           <img src="../assets/favicon.png" alt="Code's Moon logo" />
@@ -135,22 +133,26 @@
       </article>
 
       <article class="images-container compacted-images-container">
-        <div class="card">
+        <figure class="card fade-element" data-animation-name="appear-to-right">
           <div class="technologies-wrapper">
             <img src="../assets/Group 2.png" alt="Tecnologias que suportamos" />
             <p>Consiga ajuda</p>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            A quod ut temporibus quas asperiores eaque ad maiores.
-          </p>
-        </div>
+          <figcaption>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              A quod ut temporibus quas asperiores eaque ad maiores.
+            </p>
+          </figcaption>
+        </figure>
 
-        <div class="card">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            A quod ut temporibus quas asperiores eaque ad maiores.
-          </p>
+        <figure class="card fade-element" data-animation-name="appear-to-left">
+          <figcaption>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              A quod ut temporibus quas asperiores eaque ad maiores.
+            </p>
+          </figcaption>
           <div class="make-friends-wrapper">
             <img
               src="../assets/Group 1.png"
@@ -158,26 +160,27 @@
             />
             <p>Faça amigos</p>
           </div>
-        </div>
+        </figure>
         
-        <div class="members-wrapper">
-          <img src="../assets/Group 3.png" alt="Imagem dos usuários do Code's Moon">
-          <p><span>250+</span> Membros</p>
-        </div>
-        <p>
-          <span>Interessado?</span> Seja um de nós!
-        </p>
-
-        <div class="actions-anchors-container">   <!-- It will get the styles of the join button -->
-          <a class="alternative-join-button" href="#">
-            entrar
-          </a>
+        <div class="animation-wrapper fade-element" data-animation-name="appear-to-top">
+          <div class="members-wrapper">
+            <img src="../assets/Group 3.png" alt="Imagem dos usuários do Code's Moon">
+            <p><span>250+</span> Membros</p>
+          </div>
+          <p>
+            <span>Interessado?</span> Seja um de nós!
+          </p>
+          <div class="actions-anchors-container">   <!-- It will get the styles of the join button -->
+            <a class="alternative-join-button fade-element" href="#" data-animation-name="appear-growing-without-delay">
+              entrar
+            </a>
+          </div>
         </div>
       </article>
     </main>
 
     <div class="triangle-wrapper">
-      <div class="yellowed-triangle"></div>
+      <div class="yellowed-triangle fade-element" data-animation-name="appear-growing"></div>
     </div>
   </body>
 </html>
