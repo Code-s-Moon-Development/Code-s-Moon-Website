@@ -1,8 +1,5 @@
-const hamburguerMenuOpenerEL = document.querySelector(
-  '.hamburguer-menu-opener'
-);
-const hamburguerMenuCloserEL = document.querySelector(
-  '.hamburguer-menu-closer'
+const hamburguerMenuTogglerEL = document.querySelector(
+  '.hamburguer-menu-toggler'
 );
 const hamburguerMenuEL = document.querySelector('.hamburguer-menu');
 const hamburguerMenuCloserShortcutEL = document.querySelector(
@@ -10,15 +7,14 @@ const hamburguerMenuCloserShortcutEL = document.querySelector(
 );
 
 function toggleShowHamburguerMenu() {
+  hamburguerMenuTogglerEL.classList.toggle('rotate-hamburguer-rows')
   hamburguerMenuEL.classList.toggle('active-hamburguer-menu');
   hamburguerMenuCloserShortcutEL.classList.toggle(
     'active-hamburguer-menu-closer-shortcut'
   );
 }
 
-hamburguerMenuOpenerEL.addEventListener('click', toggleShowHamburguerMenu);
-
-hamburguerMenuCloserEL.addEventListener('click', toggleShowHamburguerMenu);
+hamburguerMenuTogglerEL.addEventListener('click', toggleShowHamburguerMenu);
 
 hamburguerMenuCloserShortcutEL.addEventListener(
   'click',
