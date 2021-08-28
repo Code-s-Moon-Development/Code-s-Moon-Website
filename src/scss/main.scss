@@ -35,10 +35,11 @@ Heading sizes - desktop
 }
 
 :root {
-  --page-background-color: rgba(24, 24, 24, 1);
+  --page-background-color: rgb(24, 24, 24);
   --page-content-color: white;
   --page-contrastive-content-color: black;
   --page-background-color-with-channel-alfa: rgba(1, 1, 1, 0.9);
+  --header-backgorund-color: rgba(24, 24, 24, 0.84);
   --black-color-with-channel-alfa: rgba(0, 0, 0, 0.85);
   --yellow-color: rgb(255, 208, 0);
 }
@@ -164,7 +165,7 @@ main {
     position: relative;
 
     font-size: 48px;
-    font-weight: 800;
+    font-weight: 900;
     line-height: 60px;
     overflow-wrap: break-word;
 
@@ -736,7 +737,7 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
   .page-main-header {
     display: block;
     padding-top: 8px;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
     width: 100%;
     min-height: auto;
     
@@ -744,9 +745,9 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
     top: 0px;
     z-index: 3;
 
-    // background-color: var(--page-background-color-with-channel-alfa);
+    background-color: var(--header-backgorund-color);
 
-    // box-shadow: 0px 3px 4px 2px var(--page-background-color-with-channel-alfa);
+    box-shadow: 0px 0px 4px 1px var(--header-backgorund-color);
 
     img {
       display: none;
