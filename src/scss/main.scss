@@ -35,10 +35,11 @@ Heading sizes - desktop
 }
 
 :root {
-  --page-background-color: rgb(1, 1, 1);
+  --page-background-color: rgba(24, 24, 24, 1);
   --page-content-color: white;
   --page-contrastive-content-color: black;
   --page-background-color-with-channel-alfa: rgba(1, 1, 1, 0.9);
+  --black-color-with-channel-alfa: rgba(0, 0, 0, 0.85);
   --yellow-color: rgb(255, 208, 0);
 }
 
@@ -74,13 +75,7 @@ body {
   margin-bottom: 20px;
   min-height: 96px;
 
-  li {
-    display: inline-block;
-    list-style: none;
-    cursor: pointer;
-  }
-
-  li + li {
+  a + a {
     margin-left: 30px;
   }
 
@@ -123,7 +118,7 @@ body {
     width: 80%;
   }
 
-  li:first-child a {
+  a:first-child {
     font-weight: 600;
 
     &::after {
@@ -133,7 +128,7 @@ body {
   }
 }
 
-.hamburguer-menu-opener {
+.hamburguer-menu-toggler {
   display: none;
 }
 
@@ -405,9 +400,19 @@ main {
   transform: translateX(0px);
 }
 
+.rotate-hamburguer-rows {
+  span:first-child {
+    transform: rotate(-45deg) translateY(8px);
+  }
+
+  span:last-child {
+    transform: rotate(45deg) translateY(-8px);
+  }
+}
+
 div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcut {
   pointer-events: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .appear-to-right {
@@ -739,20 +744,20 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
     top: 0px;
     z-index: 3;
 
-    background-color: var(--page-background-color-with-channel-alfa);
+    // background-color: var(--page-background-color-with-channel-alfa);
 
-    box-shadow: 0px 3px 4px 2px var(--page-background-color-with-channel-alfa);
+    // box-shadow: 0px 3px 4px 2px var(--page-background-color-with-channel-alfa);
 
     img {
       display: none;
     }
 
-    ul {
+    nav {
       display: flex;
       justify-content: space-between;
       gap: 8px;
 
-      li {
+      a {
         margin: 0px;
       }
     }
@@ -988,34 +993,44 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
 @media screen and (max-width: 350px) {    // Hamburguer menu breakpoint
   .page-main-header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     margin-bottom: 0px;
-    padding: 11px 16px;
+    padding: 6px 16px 0px 2px;
     padding-bottom: 6px;
 
-    ul {
+    img {
+      display: block;
+      width: 51px;
+      height: 41px;
+    }
+
+    nav {
       flex-direction: column;
       justify-content: space-evenly;
-      align-items: center;
+      align-items: flex-start;
       gap: 16px;
 
-      padding: 16px 0px;
+      padding: 20% 0px;
+      padding-left: 10%;
       width: 75vw;
       height: 100vh;
 
       position: fixed;
       top: 0px;
-      right: 0px;
+      left: 0px;
       z-index: 4;
       
-      transform: translateX(calc(100% + 4px));
+      transform: translateX(calc(-100% - 4px));
       
-      overflow-y: scroll;
+      overflow: auto;
 
-      background-color: var(--page-background-color);
+      background-color: var(--black-color-with-channel-alfa);
 
-      box-shadow: -2px 0px 4px var(--page-background-color);
+      box-shadow: 0px 0px 3px 1px var(--page-background-color-with-channel-alfa);
+
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
 
       -webkit-transition: transform 200ms linear;
       -moz-transition: transform 200ms linear;
@@ -1026,51 +1041,18 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
         padding: 8px;
         font-size: 15.5px;
       }
-
-      .hamburguer-menu-closer {
-        display: block;
-
-        width: 22px;
-        height: 22px;
-        padding: 4px;
-
-        position: absolute;
-        top: 9px;
-        right: 17px;
-
-        background-color: transparent;
-
-        span {
-          display: block;
-          width: 22px;
-          height: 3px;
-
-          position: absolute;
-          top: 50%;
-          left: 50%;
-
-          background-color: var(--yellow-color);
-        }
-
-        span:first-child {
-          transform: translate(-50%) rotate(-45deg);
-        }
-
-        span:last-child {
-          transform: translate(-50%) rotate(45deg);
-        } 
-      }
     }
   }
 
-  .hamburguer-menu-opener {
+  .hamburguer-menu-toggler {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 19px;
-
+    justify-content: center;
+    gap: 8px;
     flex-shrink: 0;
+
+    width: 30px;
+    height: 19px;
 
     position: relative;
 
@@ -1082,6 +1064,11 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
       height: 3px;
 
       background-color: var(--yellow-color);
+
+      -webkit-transition: transform 120ms linear;
+      -moz-transition: transform 120ms linear;
+      -o-transition: transform 120ms linear;
+      transition: transform 120ms linear; 
     }
   }
 
@@ -1111,6 +1098,13 @@ div.active-hamburguer-menu-closer-shortcut.active-hamburguer-menu-closer-shortcu
       line-height: 24px;
       font-size: 15px;
     }
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .page-main-header nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
